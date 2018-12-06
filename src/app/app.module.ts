@@ -23,6 +23,8 @@ import { routes } from './routes';
 import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
+import { AuthGuard } from './services/auth-guard.service';
+import { AdminAuthGuard } from './services/admin-auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { UserService } from './services/user.service';
   ],
   providers: [
     AuthService,
-    UserService
+    UserService,
+    AuthGuard,
+    AdminAuthGuard
   ],
   bootstrap: [AppComponent]
 })

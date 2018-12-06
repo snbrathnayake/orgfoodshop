@@ -9,6 +9,8 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { Routes } from '@angular/router';
 import { MyOrdersComponent } from './management/my-orders/my-orders.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { AdminAuthGuard } from './services/admin-auth-guard.service';
 
 export const routes: Routes = [
     {
@@ -20,10 +22,6 @@ export const routes: Routes = [
       component: LoginComponent,
     },
     {
-      path: routePaths.myOrders,
-      component: MyOrdersComponent,
-    },
-    {
       path: routePaths.products,
       component: ProductsComponent,
     },
@@ -32,19 +30,28 @@ export const routes: Routes = [
       component: ShoppingCartComponent,
     },
     {
+      path: routePaths.myOrders,
+      component: MyOrdersComponent,
+      canActivate: [AuthGuard]
+    },
+    {
       path: routePaths.checkOut,
       component: CheckOutComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: routePaths.successOrders,
       component: OrderSuccessComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: routePaths.adminOrders,
       component: AdminOrdersComponent,
+      canActivate: [AuthGuard , AdminAuthGuard]
     },
     {
       path: routePaths.adminProducts,
       component: AdminProductsComponent,
+      canActivate: [AuthGuard , AdminAuthGuard]
     },
 ];

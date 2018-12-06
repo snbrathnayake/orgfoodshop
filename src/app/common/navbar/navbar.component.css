@@ -7,3 +7,8 @@
     font-weight: bold;
     padding: 2px;
 }
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+ }

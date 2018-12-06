@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import * as firebase from 'firebase';
 import { AuthModel } from '../models/Auth-Model';
 import { Observable } from 'rxjs/Observable';
@@ -15,10 +15,10 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth,
     private userService: UserService,
     private db: AngularFireDatabase,
+    private route: ActivatedRoute,
     private router: Router) {
 
     afAuth.authState.subscribe(auth => {
-      console.log(auth);
       this.authResponse = auth;
     });
   }
@@ -65,7 +65,24 @@ export class AuthService {
     const provider = new firebase.auth.GoogleAuthProvider();
     return this.socialSignIn(provider);
   }
+
+  get isAdmin(): boolean {
+    let adminPermission = false;
+    this.userService
+    .getUserData(this.currentUserId)
+    .subscribe( user => adminPermission = user.isAdmin);
+    return adminPermission || false;
+  }
+
+  private storeReturnURL(url: string): void {
+    localStorage.setItem('returnURL', url);
+  }
+
   private socialSignIn(provider): any {
+    // store the current navigated URL in localstorage in Browser.
+    const url = this.route.snapshot.queryParamMap.get('returnURL') || '/';
+    this.storeReturnURL(url);
+
     return this.afAuth.auth.signInWithRedirect(provider)
       .then((credential) => {
         this.authResponse = credential.user;
