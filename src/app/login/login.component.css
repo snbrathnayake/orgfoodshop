@@ -1,0 +1,7 @@
+.login-template {
+    margin-block-end: 5em;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}

@@ -1,0 +1,9 @@
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.guest-user { 
+    text-align: center;
+    font-weight: bold;
+    padding: 2px;
+}
