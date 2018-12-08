@@ -33,7 +33,8 @@ export class AuthService {
   }
   // Returns Observable AuthModel=> firbase.user
   get currentUserObservable(): Observable<AuthModel> {
-    return this.afAuth.authState;
+      return this.afAuth.authState;
+   // return Observable.of(null);
   }
 
   get currentUserId(): string {
@@ -74,14 +75,10 @@ export class AuthService {
     return adminPermission || false;
   }
 
-  private storeReturnURL(url: string): void {
-    localStorage.setItem('returnURL', url);
-  }
-
   private socialSignIn(provider): any {
     // store the current navigated URL in localstorage in Browser.
     const url = this.route.snapshot.queryParamMap.get('returnURL') || '/';
-    this.storeReturnURL(url);
+    localStorage.setItem('returnURL', url);
 
     return this.afAuth.auth.signInWithRedirect(provider)
       .then((credential) => {

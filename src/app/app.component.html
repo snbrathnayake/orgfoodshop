@@ -1,7 +1,10 @@
-<div *ngIf="ready">
+<div *ngIf="ready; else spinner" style="height: 100%">
   <app-navbar></app-navbar>
 
   <div class="container">
     <router-outlet></router-outlet>
   </div>
 </div>
+<ng-template #spinner>
+  <h4 class="spinner">Please wait.....</h4>
+</ng-template>

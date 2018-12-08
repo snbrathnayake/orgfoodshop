@@ -1,0 +1,11 @@
+.spinner {
+    align-items: center;
+    box-sizing: border-box;
+    color: tomato;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-size: 6em;
+    height: 100vh;
+    place-content: center;
+}

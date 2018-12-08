@@ -3,5 +3,18 @@
     height: 10em;
     display: flex;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    height: 50vh;
+    place-content: center;
+}
+
+.google-img>img {
+    padding: 10px;
+    width: 300;
+    height: 300px;
+    display: flex;
+    align-items: center;
     justify-content: center
 }
