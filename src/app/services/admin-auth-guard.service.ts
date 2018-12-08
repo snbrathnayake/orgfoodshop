@@ -18,7 +18,7 @@ export class AdminAuthGuard implements CanActivate {
 
     return auth.currentUserObservable
       .switchMap(user => userService.getUserData(user.uid))
-      .map(appUser => appUser.isAdmin);
+      .map(loginAs => loginAs.isAdmin);
   }
 
 }

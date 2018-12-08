@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { SpinnerModule } from 'ng-spinner';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
@@ -44,6 +45,7 @@ import { AdminAuthGuard } from './services/admin-auth-guard.service';
   ],
   imports: [
     BrowserModule,
+    SpinnerModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),

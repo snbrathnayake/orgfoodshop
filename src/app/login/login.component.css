@@ -10,11 +10,15 @@
     place-content: center;
 }
 
-.google-img>img {
-    padding: 10px;
-    width: 300;
-    height: 300px;
+.google-img > img {
+    padding: 20px;
+    width: 200;
+    height: 200px;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    border: 0px solid #dddddd;
+    border-radius: 3%;
+    margin: 5px;
+
 }
