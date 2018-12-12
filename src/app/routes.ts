@@ -11,6 +11,7 @@ import { Routes } from '@angular/router';
 import { MyOrdersComponent } from './management/my-orders/my-orders.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
+import { ProductFormComponent } from './form/product-form/product-form.component';
 
 export const routes: Routes = [
     {
@@ -47,6 +48,11 @@ export const routes: Routes = [
     {
       path: routePaths.adminOrders,
       component: AdminOrdersComponent,
+      canActivate: [AuthGuard , AdminAuthGuard]
+    },
+    {
+      path: routePaths.adminProductForm,
+      component: ProductFormComponent,
       canActivate: [AuthGuard , AdminAuthGuard]
     },
     {

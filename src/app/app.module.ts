@@ -26,6 +26,7 @@ import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
+import { ProductFormComponent } from './form/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AdminAuthGuard } from './services/admin-auth-guard.service';
     OrderSuccessComponent,
     MyOrdersComponent,
     AdminProductsComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,

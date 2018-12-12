@@ -17,4 +17,17 @@ export class NavbarComponent implements OnInit {
     this.auth.signOut();
   }
 
+  get routeLinkClass(): string {
+    const { auth } = this;
+    let result = 'dropdown-item';
+    if (!auth.isAdmin) {
+      return result += ' disabled';
+    }
+    return result;
+  }
+
+  get usernameSpliter() {
+    const { auth } = this;
+    return auth.currentUsername.split(' ' , 1);
+  }
 }

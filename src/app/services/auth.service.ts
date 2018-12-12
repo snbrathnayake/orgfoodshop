@@ -41,6 +41,10 @@ export class AuthService {
     return this.authenticated ? this.authResponse.uid : '';
   }
 
+  get currentUsername(): string {
+    return this.authenticated ? this.authResponse.displayName : 'my';
+  }
+
   // Anonymous User
   get currentUserAnonymous(): boolean {
     return this.authenticated ? this.authResponse.isAnonymous : false;
