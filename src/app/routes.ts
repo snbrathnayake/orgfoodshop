@@ -11,7 +11,7 @@ import { Routes } from '@angular/router';
 import { MyOrdersComponent } from './management/my-orders/my-orders.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
-import { ProductFormComponent } from './form/product-form/product-form.component';
+import { ProductFormComponent } from './form/admin/product-form/product-form.component';
 
 export const routes: Routes = [
     {
