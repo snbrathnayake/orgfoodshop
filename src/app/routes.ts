@@ -56,6 +56,11 @@ export const routes: Routes = [
       canActivate: [AuthGuard , AdminAuthGuard]
     },
     {
+      path: routePaths.adminProductById,
+      component: ProductFormComponent,
+      canActivate: [AuthGuard , AdminAuthGuard]
+    },
+    {
       path: routePaths.adminProducts,
       component: AdminProductsComponent,
       canActivate: [AuthGuard , AdminAuthGuard]
