@@ -13,7 +13,7 @@ import 'rxjs/add/operator/take';
 export class ProductFormComponent implements OnInit {
   categories$;
   product: ProductModel = {} as ProductModel;
-  id: string;
+  _id: string;
 
   constructor(
     private router: Router,
@@ -21,7 +21,7 @@ export class ProductFormComponent implements OnInit {
     private categoryService: CategoryService,
     private productService: ProductService) {
     this.categories$ = this.categoryService.getCategoriesData();
-    this.id = this.route.snapshot.paramMap.get('id'); // get value of actived url @param:/id
+    this._id = this.route.snapshot.paramMap.get('id'); // get value of actived url @param:/_id
     const { pid } = this;
 
     if (pid) {
@@ -50,7 +50,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   get pid(): string {
-    return this.id;
+    return this._id;
   }
 
   ngOnInit() {

@@ -1,22 +1,26 @@
-<p>
-    <a routerLink="/admin/product/add-product" class="btn btn-primary">New Product</a>
-</p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Price ( USD )</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let p of products$ | async ">
-            <td>{{ p.title }}</td>
-            <td>{{ p.price |  currency:'USD':true }}</td>
-            <td>
-                <a [routerLink]="['/admin/product', p.$key]" class="btn btn-primary">Edit</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div *ngIf="ready; else spinner">
+    <p>
+        <a routerLink="/admin/product/add-product" class="btn btn-primary">New Product</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price ( USD )</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products$ | async ">
+                <td>{{ p.title }}</td>
+                <td>{{ p.price | currency:'USD':true }}</td>
+                <td>
+                    <a [routerLink]="['/admin/product', p.$key]" class="btn btn-primary">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #spinner>
+    <ng-spinner [display]="true"></ng-spinner>
+</ng-template>

@@ -1,0 +1,23 @@
+.page-not-found-template {
+    margin-block-end: 5em;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    height: 100vh;
+    place-content: center;
+}
+
+.img-404 > img {
+    padding: 10px;
+    max-width: 100 !important;
+    max-height: 100 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3%;
+    margin: 10px;
+
+}

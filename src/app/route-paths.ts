@@ -1,4 +1,5 @@
 export const routePaths = {
+    notFound: '**',
     home: '',
     login: 'login',
     products: 'products',

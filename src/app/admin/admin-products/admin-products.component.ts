@@ -14,6 +14,10 @@ export class AdminProductsComponent implements OnInit {
     this.products$ = this.productService.getAll();
   }
 
+  get ready(): boolean {
+    return this.products$;
+  }
+
   ngOnInit() {
   }
 
