@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
-import { skipUntil } from 'rxjs/operators';
 
 
 @Component({

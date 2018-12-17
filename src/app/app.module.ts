@@ -7,6 +7,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SpinnerModule } from 'ng-spinner';
+// import { DataTableModule } from 'angular-4-data-table'; // notice this
+import { DataTableModule } from 'angular5-data-table';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
@@ -52,6 +54,7 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
   ],
   imports: [
     BrowserModule,
+    DataTableModule.forRoot(),
     FormsModule,
     SpinnerModule,
     AngularFireAuthModule,

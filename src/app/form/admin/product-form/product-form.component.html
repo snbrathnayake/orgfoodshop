@@ -56,7 +56,7 @@
   <!-- Bootstrap Card -->
   <!-- Property binding : #title.value -->
   <div class="col-md-5">
-    <div class="card" style="width: 24rem;">
+    <div *ngIf="product.title" class="card" style="width: 24rem;">
       <img class="card-img-top" [src]="product.imageUrl" *ngIf="product.imageUrl">
       <div class="card-body">
         <h5 class="card-title">{{ product.title }}</h5>
