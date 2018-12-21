@@ -20,7 +20,7 @@ export class ProductFormComponent implements OnInit {
     private route: ActivatedRoute,
     private categoryService: CategoryService,
     private productService: ProductService) {
-    this.categories$ = this.categoryService.getCategoriesData();
+    this.categories$ = this.categoryService.getAll();
     this._id = this.route.snapshot.paramMap.get('id'); // get value of actived url @param:/_id
     const { pid } = this;
 

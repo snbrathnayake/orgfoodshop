@@ -1,0 +1,13 @@
+.card-block {
+    margin-bottom: 2rem;
+    width: 20rem;
+}
+
+.card-block > img {
+    height: 14rem;
+    width: 20rem;
+}
+
+.card-footer {
+    padding: 0;
+}

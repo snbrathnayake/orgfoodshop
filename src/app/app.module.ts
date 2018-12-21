@@ -33,6 +33,8 @@ import { CategoryService } from './services/category.service';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './services/product.service';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
+import { ProductFilterComponent } from './management/products/product-filter/product-filter.component';
+import { ProductCardComponent } from './management/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
     AdminProductsComponent,
     AdminOrdersComponent,
     ProductFormComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
