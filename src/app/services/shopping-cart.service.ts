@@ -45,12 +45,11 @@ export class ShoppingCartService {
 
   // return cart id when clicking the addToCart button.
   private async getOrCreateCartId(): Promise<string> {
-    const cartId = localStorage.getItem('cart_bucket_id');
-
+    const cartId = localStorage.getItem('cart_id');
     if (cartId) { return cartId; }
 
     const result = await this.create();
-    localStorage.setItem('cart_bucket_id', result.key); // result.key => $key of shopping-cart added
+    localStorage.setItem('cart_id', result.key); // result.key => $key of shopping-cart added
     return result.key;
 
   }
