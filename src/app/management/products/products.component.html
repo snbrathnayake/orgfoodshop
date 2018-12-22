@@ -1,12 +1,12 @@
 <div class="row" *ngIf="ready; else spinner">
   <div class="col-3">
-    <app-product-filter [categorySelected]="categoryParam"></app-product-filter>
+    <app-product-filter [category-selected]="categoryParam"></app-product-filter>
   </div>
   <div class="col">
     <div class="row">
       <ng-container *ngFor="let p of filteredProducts; let i = index">
         <div class="col">
-          <app-product-card [product]="p"></app-product-card>
+          <app-product-card [product]="p" [shopping-cart]="cart"></app-product-card>
         </div>
         <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
       </ng-container>

@@ -35,6 +35,7 @@ import { ProductService } from './services/product.service';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { ProductFilterComponent } from './management/products/product-filter/product-filter.component';
 import { ProductCardComponent } from './management/product-card/product-card.component';
+import { ShoppingCartService } from './services/shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { ProductCardComponent } from './management/product-card/product-card.com
     UserService,
     ProductService,
     CategoryService,
+    ShoppingCartService,
     AuthGuard,
     AdminAuthGuard
   ],

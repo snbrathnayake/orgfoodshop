@@ -8,8 +8,9 @@ import { CategoryService } from '../../../services/category.service';
 })
 export class ProductFilterComponent implements OnInit {
 
-  @Input() categorySelected;
   categories$;
+  @Input('category-selected') categorySelected;
+
 
   constructor(private categoryService: CategoryService) { }
 
