@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { ShoppingCartService } from '../../services/shopping-cart.service';
+import { Observable } from 'rxjs/Observable';
+import { ShoppingCart } from '../../models/shopping-cart';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +11,15 @@ import { AuthService } from '../../services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  shoppingCartItemCount: number;
+  cartBucket$: Observable<ShoppingCart>;
 
-  ngOnInit() {
+  constructor(public auth: AuthService, private shoppingCartService: ShoppingCartService) { }
+
+  async ngOnInit() {
+    // listen to the cart-item(#count) onChanged
+    // get cart-bucket changes (single cart for page)
+    this.cartBucket$ = await this.shoppingCartService.getCart();
   }
 
   logout() {
@@ -28,6 +37,6 @@ export class NavbarComponent implements OnInit {
 
   get usernameSpliter() {
     const { auth } = this;
-    return auth.currentUsername.split(' ' , 1);
+    return auth.currentUsername.split(' ', 1);
   }
 }

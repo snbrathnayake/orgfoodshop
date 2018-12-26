@@ -23,13 +23,13 @@ export class ProductsComponent implements OnInit, OnDestroy {
     private productService: ProductService,
     private cartService: ShoppingCartService,
     private route: ActivatedRoute) {
-
-    this.initializeProducts(); // first load allprod || filterdprod
+    // first load allprod || filterdprod
+    this.initializeProducts();
   }
 
   async ngOnInit() {
     this.subscription = (await this.cartService.getCart()) // next load cart details
-      .subscribe(cart => this.cart = cart);
+      .subscribe(c => this.cart = c);
   }
 
   private initializeProducts() {
@@ -49,8 +49,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   get ready() {
-    const { filteredProducts } = this;
-    return filteredProducts !== undefined; // for now zero product unacceptable
+    // for now zero product unacceptable
+    return this.filteredProducts && this.cart;
   }
 
   ngOnDestroy() {

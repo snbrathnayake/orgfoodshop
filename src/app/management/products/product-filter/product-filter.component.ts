@@ -8,14 +8,15 @@ import { CategoryService } from '../../../services/category.service';
 })
 export class ProductFilterComponent implements OnInit {
 
-  categories$;
+  @Input('category-selected') categorySelected: string;
+  categories$: any;
 
-  @Input('category-selected') categorySelected;
-
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService) {
+    this.categories$ = this.categoryService.getAll();
+  }
 
   ngOnInit() {
-    this.categories$ = this.categoryService.getAll();
+   // this.categories$ = this.categoryService.getAll();
   }
 
 }

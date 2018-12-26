@@ -1,35 +1,26 @@
-<div *ngIf="product.title" class="card card-block">
-  <img *ngIf="product.imageUrl" class="card-img-top card-img-snap" [src]="product.imageUrl" alt="{{ product.title }} image">
+<ng-container *ngIf="product; else spinner">
+  <div *ngIf="product.title" class="card card-block">
+    <img *ngIf="product.imageUrl" class="card-img-top card-img-snap" [src]="product.imageUrl" alt="{{ product.title }} image">
 
-  <div class="card-body">
-    <h5 class="card-title">{{ product.title }}</h5>
-    <p class="card-text">{{ product.price | currency:'USD': true}}</p>
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">{{ product.price | currency:'USD': true}}</p>
+    </div>
+
+    <div *ngIf="showActions && shoppingCart" class="card-footer">
+      <button *ngIf="shoppingCart.qtyInCart(product) === 0; else updateQty" 
+        (click)="addToCart()" 
+        class="btn btn-secondary btn-block">
+        Add to Cart
+      </button>
+      <ng-template #updateQty>
+        <app-product-quantity [product]="product" [shopping-cart]="shoppingCart">
+        </app-product-quantity>
+      </ng-template>
+    </div>
   </div>
+</ng-container>
 
-  <div *ngIf="showActions" class="card-footer">
-    <button 
-      *ngIf="qtyInCart === 0; else updateQty" 
-      (click)="addToCart()" 
-      class="btn btn-secondary btn-block">
-      Add to Cart
-    </button>
-
-    <ng-template #updateQty>
-      <div class="row no-gutters">
-        <div class="col-2">
-          <button 
-            (click)="removeFromCart()"
-            class="btn btn-secondary btn-block">-</button>
-        </div>
-        <div class="col text-center">
-          {{ qtyInCart }} In Cart
-        </div>
-        <div class="col-2">
-          <button 
-            (click)="addToCart()"
-            class="btn btn-secondary btn-block">+</button>
-        </div>
-      </div>
-    </ng-template>
-  </div>
-</div>
+<ng-template #spinner>
+  <ng-spinner [display]="true"></ng-spinner>
+</ng-template>

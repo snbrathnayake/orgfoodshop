@@ -23,6 +23,9 @@ export class AppComponent {
   }
 
   get ready(): boolean {
+    // load all product
+    // load cart details
+    // no products => Home page; else product page
     return this.routeCompleted;
   }
 

@@ -36,6 +36,7 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
 import { ProductFilterComponent } from './management/products/product-filter/product-filter.component';
 import { ProductCardComponent } from './management/product-card/product-card.component';
 import { ShoppingCartService } from './services/shopping-cart.service';
+import { ProductQuantityComponent } from './management/product-quantity/product-quantity.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ShoppingCartService } from './services/shopping-cart.service';
     ProductFormComponent,
     PageNotFoundComponent,
     ProductFilterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductQuantityComponent
   ],
   imports: [
     BrowserModule,
