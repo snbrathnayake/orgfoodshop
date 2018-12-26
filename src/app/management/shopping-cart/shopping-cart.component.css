@@ -1,0 +1,14 @@
+.quantity-col {
+   width: 230px; 
+}
+
+.price-col {
+    width: 200px; 
+ }
+
+ .thumbnail {
+     width: 80px;
+     height: 80px;
+     border-radius: 50%;
+     background-size: cover;
+ }

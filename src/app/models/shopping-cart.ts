@@ -15,7 +15,7 @@ export class ShoppingCart {
      */
     items: ShoppingCartItem[] = [];
 
-    constructor(public itemMap: ItemMapObject) {
+    constructor(private itemMap: ItemMapObject) {
         // if null object pass => no items under shopping-cart
         this.itemMap = itemMap || {};
 

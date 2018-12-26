@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ProductModel } from '../models/product-model';
-import 'rxjs/add/operator/take';
-import 'rxjs/add/operator/map';
 import { ShoppingCart } from '../models/shopping-cart';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ShoppingCartService {
@@ -40,12 +40,17 @@ export class ShoppingCartService {
 
     item$.take(1)
       .subscribe(item => {
-        item$.update({
-          title: product.title,
-          imageUrl: product.imageUrl,
-          price: product.price,
-          quantity: (item.quantity || 0) + change
-        });
+        const qty = (item.quantity || 0) + change;
+        if (qty === 0) {
+          item$.remove();
+        } else {
+          item$.update({
+            title: product.title,
+            imageUrl: product.imageUrl,
+            price: product.price,
+            quantity: qty
+          });
+        }
       });
   }
 
