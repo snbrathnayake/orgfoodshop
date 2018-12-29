@@ -1,3 +1,34 @@
-<p>
-  my-orders works!
-</p>
+<h2 style="padding-bottom:20px;">Orders</h2>
+
+<div class="row col-10" *ngIf="orders$ | async as orderItem; else spinner">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Date</th>
+        <th>Destination</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orderItem">
+        <td>
+          {{ order.shipping.name }}
+        </td>
+        <td>
+          {{ order.datePlaced | date: 'mediumDate' }}
+        </td>
+        <td>
+          {{ order.shipping.city }}
+        </td>
+        <td>
+          <button type="button" class="btn btn-link">View (popover)</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #spinner>
+  <ng-spinner [display]="true"></ng-spinner>
+</ng-template>

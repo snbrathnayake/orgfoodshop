@@ -1,0 +1,79 @@
+[debug] [2018-12-26T13:59:37.793Z] ----------------------------------------------------------------------
+[debug] [2018-12-26T13:59:37.800Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-12-26T13:59:37.802Z] CLI Version:   6.1.2
+[debug] [2018-12-26T13:59:37.802Z] Platform:      darwin
+[debug] [2018-12-26T13:59:37.802Z] Node Version:  v8.12.0
+[debug] [2018-12-26T13:59:37.802Z] Time:          Wed Dec 26 2018 19:29:37 GMT+0530 (+0530)
+[debug] [2018-12-26T13:59:37.803Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-26T13:59:37.904Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-26T13:59:37.905Z] > authorizing via signed-in user
+[debug] [2018-12-26T13:59:37.905Z] [iam] checking project orgfoodshop for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2018-12-26T13:59:37.909Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-12-26T13:59:37.910Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-12-26T13:59:38.783Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-26T13:59:38.912Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/orgfoodshop:testIamPermissions  
+
+[debug] [2018-12-26T13:59:40.930Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-26T13:59:40.934Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/orgfoodshop  
+ 
+[debug] [2018-12-26T13:59:41.770Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'orgfoodshop'...
+[info] 
+[info] i  deploying hosting
+[debug] [2018-12-26T13:59:41.781Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/orgfoodshop/versions  
+
+[debug] [2018-12-26T13:59:44.809Z] <<< HTTP RESPONSE 200
+[info] i  hosting[orgfoodshop]: beginning deploy...
+[info] i  hosting[orgfoodshop]: found 21 files in dist
+[debug] [2018-12-26T13:59:44.906Z] [hosting] hash cache [ZGlzdA] load error: lines is not defined
+[debug] [2018-12-26T13:59:46.449Z] [hosting] hash cache [ZGlzdA] stored for 21 files
+[debug] [2018-12-26T13:59:46.449Z] [hosting][hash queue][FINAL]
+[debug] [2018-12-26T13:59:46.450Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/orgfoodshop/versions/c1b323a381e578e7:populateFiles  
+ <request body omitted>
+[debug] [2018-12-26T13:59:49.307Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-26T13:59:49.322Z] [hosting][populate queue][FINAL]
+[debug] [2018-12-26T13:59:49.323Z] [hosting] uploads queued: 12
+[debug] [2018-12-26T14:00:20.615Z] [uploadQueue] Retrying task d2eb63792d41f240b62956d552f843a540f37de2b0a21c738443835f6c320031
+[debug] [2018-12-26T14:00:20.654Z] [uploadQueue] Retrying task 176122870bb3d24c80f11c9b176e6166ed70ef83f73eaaca3dc39ab771774304
+[debug] [2018-12-26T14:00:20.773Z] [uploadQueue] Retrying task d64b624eb8e8b5cef8ec00e9aacae06a2f5f8a35341935b300adc7fb116235cc
+[debug] [2018-12-26T14:00:21.498Z] [uploadQueue] Retrying task 780e2d0468db5ccb5f0d9f3a657a0467a1f8538ba4e4a2e71415bd4de73389ad
+[debug] [2018-12-26T14:00:21.656Z] [uploadQueue] Retrying task edce342a95bca072b483a032acee0a9b8744ad17b992f0af72aa81a9d9c9d797
+[debug] [2018-12-26T14:00:34.102Z] [uploadQueue] Retrying task d2eb63792d41f240b62956d552f843a540f37de2b0a21c738443835f6c320031
+[debug] [2018-12-26T14:00:34.250Z] [uploadQueue] Retrying task 176122870bb3d24c80f11c9b176e6166ed70ef83f73eaaca3dc39ab771774304
+[debug] [2018-12-26T14:00:34.573Z] [uploadQueue] Retrying task d64b624eb8e8b5cef8ec00e9aacae06a2f5f8a35341935b300adc7fb116235cc
+[debug] [2018-12-26T14:00:35.174Z] [uploadQueue] Retrying task 780e2d0468db5ccb5f0d9f3a657a0467a1f8538ba4e4a2e71415bd4de73389ad
+[debug] [2018-12-26T14:00:35.329Z] [uploadQueue] Retrying task edce342a95bca072b483a032acee0a9b8744ad17b992f0af72aa81a9d9c9d797
+[debug] [2018-12-26T14:00:48.049Z] [uploadQueue] Retrying task d2eb63792d41f240b62956d552f843a540f37de2b0a21c738443835f6c320031
+[debug] [2018-12-26T14:00:48.089Z] [uploadQueue] Retrying task 176122870bb3d24c80f11c9b176e6166ed70ef83f73eaaca3dc39ab771774304
+[debug] [2018-12-26T14:00:48.529Z] [uploadQueue] Retrying task d64b624eb8e8b5cef8ec00e9aacae06a2f5f8a35341935b300adc7fb116235cc
+[debug] [2018-12-26T14:00:48.849Z] [uploadQueue] Retrying task 780e2d0468db5ccb5f0d9f3a657a0467a1f8538ba4e4a2e71415bd4de73389ad
+[debug] [2018-12-26T14:00:49.009Z] [uploadQueue] Retrying task edce342a95bca072b483a032acee0a9b8744ad17b992f0af72aa81a9d9c9d797
+[debug] [2018-12-26T14:01:03.374Z] [uploadQueue] Retrying task d2eb63792d41f240b62956d552f843a540f37de2b0a21c738443835f6c320031
+[debug] [2018-12-26T14:01:03.375Z] [uploadQueue] Retrying task 176122870bb3d24c80f11c9b176e6166ed70ef83f73eaaca3dc39ab771774304
+[debug] [2018-12-26T14:01:03.768Z] [uploadQueue] Retrying task d64b624eb8e8b5cef8ec00e9aacae06a2f5f8a35341935b300adc7fb116235cc
+[debug] [2018-12-26T14:01:04.253Z] [uploadQueue] Retrying task 780e2d0468db5ccb5f0d9f3a657a0467a1f8538ba4e4a2e71415bd4de73389ad
+[debug] [2018-12-26T14:01:04.253Z] [uploadQueue] Retrying task edce342a95bca072b483a032acee0a9b8744ad17b992f0af72aa81a9d9c9d797
+[debug] [2018-12-26T14:01:21.934Z] [uploadQueue] Retrying task d2eb63792d41f240b62956d552f843a540f37de2b0a21c738443835f6c320031
+[debug] [2018-12-26T14:01:21.935Z] [uploadQueue] Retrying task 176122870bb3d24c80f11c9b176e6166ed70ef83f73eaaca3dc39ab771774304
+[debug] [2018-12-26T14:01:22.089Z] [uploadQueue] Retrying task d64b624eb8e8b5cef8ec00e9aacae06a2f5f8a35341935b300adc7fb116235cc
+[debug] [2018-12-26T14:01:22.408Z] [uploadQueue] Retrying task edce342a95bca072b483a032acee0a9b8744ad17b992f0af72aa81a9d9c9d797
+[debug] [2018-12-26T14:01:22.412Z] [uploadQueue] Retrying task 780e2d0468db5ccb5f0d9f3a657a0467a1f8538ba4e4a2e71415bd4de73389ad
+[debug] [2018-12-26T14:01:34.290Z] [uploadQueue] Retries exhausted for task d2eb63792d41f240b62956d552f843a540f37de2b0a21c738443835f6c320031:
+[debug] [2018-12-26T14:01:34.291Z] [hosting][upload queue][FINAL]
+[debug] [2018-12-26T14:01:34.314Z] [uploadQueue] Retries exhausted for task 176122870bb3d24c80f11c9b176e6166ed70ef83f73eaaca3dc39ab771774304:
+[debug] [2018-12-26T14:01:34.529Z] [uploadQueue] Retries exhausted for task d64b624eb8e8b5cef8ec00e9aacae06a2f5f8a35341935b300adc7fb116235cc:
+[debug] [2018-12-26T14:01:34.689Z] [uploadQueue] Retries exhausted for task edce342a95bca072b483a032acee0a9b8744ad17b992f0af72aa81a9d9c9d797:
+[debug] [2018-12-26T14:01:34.695Z] [uploadQueue] Retries exhausted for task 780e2d0468db5ccb5f0d9f3a657a0467a1f8538ba4e4a2e71415bd4de73389ad:
+[debug] [2018-12-26T14:02:04.317Z] Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1148:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:139:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:219:9)
+[error] 
+[error] Error: An unexpected error has occurred.

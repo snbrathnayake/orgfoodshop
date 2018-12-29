@@ -33,6 +33,11 @@ export const routes: Routes = [
     component: ShoppingCartComponent,
   },
   {
+    path: routePaths.adminOrders,
+    component: AdminOrdersComponent,
+    canActivate: [AuthGuard, AdminAuthGuard]
+  },
+  {
     path: routePaths.myOrders,
     component: MyOrdersComponent,
     canActivate: [AuthGuard]
@@ -46,11 +51,6 @@ export const routes: Routes = [
     path: routePaths.successOrders,
     component: OrderSuccessComponent,
     canActivate: [AuthGuard]
-  },
-  {
-    path: routePaths.adminOrders,
-    component: AdminOrdersComponent,
-    canActivate: [AuthGuard, AdminAuthGuard]
   },
   {
     path: routePaths.adminProductForm,

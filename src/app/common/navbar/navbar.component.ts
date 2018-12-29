@@ -35,8 +35,8 @@ export class NavbarComponent implements OnInit {
     return result;
   }
 
-  get usernameSpliter() {
-    const { auth } = this;
-    return auth.currentUsername.split(' ', 1);
-  }
+  // get usernameSpliter() {
+  //   const { auth } = this;
+  //   return auth.currentUsername.split(' ', 1);
+  // }
 }
