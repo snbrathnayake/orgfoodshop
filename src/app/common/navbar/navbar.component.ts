@@ -11,6 +11,7 @@ import { ShoppingCart } from '../../models/shopping-cart';
 })
 export class NavbarComponent implements OnInit {
 
+  isNavbarCollapsed = true;
   shoppingCartItemCount: number;
   cartBucket$: Observable<ShoppingCart>;
 
@@ -35,8 +36,4 @@ export class NavbarComponent implements OnInit {
     return result;
   }
 
-  // get usernameSpliter() {
-  //   const { auth } = this;
-  //   return auth.currentUsername.split(' ', 1);
-  // }
 }
