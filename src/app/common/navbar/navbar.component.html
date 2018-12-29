@@ -1,52 +1,55 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-  <a class="navbar-brand" routerLink="/">Organic Food</a>
-  <button class="navbar-toggler" type="button" 
-    (click)="isNavbarCollapsed = !isNavbarCollapsed" 
-    data-toggle="collapse" data-target="#navbarsExampleDefault"
-    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <i class="fa fa-leaf" aria-hidden="true"></i>
+    </a>
 
-  <div 
-    [ngbCollapse]="isNavbarCollapsed"
-    class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/shopping-cart">
-          Shopping Cart
-          <span 
-            class="badge badge-warning badge-pill" *ngIf="cartBucket$ | async as cart">
-            {{ cart.totalItemsCount }}
-          </span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/products">Products</a>
-      </li>
-      <ng-template #guest>
+    <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse"
+      data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Login</a>
+          <a class="nav-link" routerLink="/shopping-cart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span class="badge badge-warning badge-pill" *ngIf="cartBucket$ | async as cart">
+              {{ cart.totalItemsCount }}
+            </span>
+          </a>
         </li>
-      </ng-template>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">
+            <i class="fa fa-product-hunt" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- user login details -->
+      <ul class="navbar-nav">
+        <ng-template #guest>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">
+              <i class="fa fa-user"></i> Login
+            </a>
+          </li>
+        </ng-template>
 
-      <li ngbDropdown *ngIf="auth.authenticated; else guest" class="nav-item dropdown">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          {{ auth.currentUserDisplayName }}
-        </a>
-        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
-          <a class="{{ routeLinkClass }}" routerLink="/admin/orders">Manage Orders</a>
-          <a class="{{ routeLinkClass }}" routerLink="/admin/products">Manage Products</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="logout()">Logout</a>
-        </div>
-      </li>
-    </ul>
-    <ul class="pull-right navbar-nav">
-      <li *ngIf="!auth.authenticated" class="nav-item">
-        <a class="nav-link guest-user">{{ auth.currentUserDisplayName }}</a>
-      </li>
-    </ul>
+        <li ngbDropdown *ngIf="auth.authenticated; else guest" class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fa fa-user"></i> {{ auth.currentUserDisplayName }}
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+            <a class="{{ routeLinkClass }}" routerLink="/admin/orders">Manage Orders</a>
+            <a class="{{ routeLinkClass }}" routerLink="/admin/products">Manage Products</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
+
 </nav>
